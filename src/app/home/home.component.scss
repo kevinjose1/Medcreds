@@ -1,0 +1,107 @@
+.main-section-wrapper {
+    padding: 100px 0;
+    position: relative;
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #351CA4;
+        clip-path: polygon(50% 0%, 100% 0, 100% 40%, 75% 60%, 25% 60%, 0 40%, 0 0);
+        z-index: -1;
+    }
+    .head {
+        margin-top: 30px;
+        h1 {
+            color: #fff;
+            font-size: 24px;
+        }
+        h2 {
+            color: #6CCAA9;
+            font-size: 14px;
+        }
+    }
+    .form-box-wrapper {
+        background-color: #fff;
+        margin-top: 30px;
+        border-radius: 5px;
+        overflow: hidden;
+        box-shadow: 0px 3px 11px 2px rgb(0 0 0 / 12%);
+        .img-box {
+            background-color: #F9F9F9;
+            padding: 25px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .form-box {
+            padding: 60px 40px 80px 20px;
+            .form-group {
+                margin-bottom: 30px;
+                label {
+                    font-family: "sfui-500";
+                }
+                .form-control {
+                    border: 1px solid #DDDFE1;
+                    padding: 20px 12px;
+                    margin-top: 5px;
+                    box-shadow: none;
+                    &::placeholder {
+                        color: #ABAFB3;
+                    }
+                }
+                .form-control-drop {
+                    border: 1px solid #DDDFE1;
+                    padding: 10px 12px;
+                    margin-top: 5px;
+                    height: 42px;
+                    width: 100%;
+                    border-radius: 3px;
+                    box-shadow: none;
+                    outline: none;
+                    &::placeholder {
+                        color: #ABAFB3;
+                    }
+                }
+                .error {
+                    color: red;
+                    font-size: 12px;
+                }
+                .dropdown {
+                    .arrow-down {
+                        position: absolute;
+                        top: 10px;
+                        right: 10px;
+                        img {
+                            width: 8px;
+                        }
+                    }
+                }
+            }
+            .add-btn {
+                border: 0;
+                background-color: #6CCAA9;
+                color: #fff;
+                padding: 8px 40px;
+                border-radius: 5px;
+                font-family: "sfui-500";
+                transition: all 0.4s ease-in-out;
+                &:hover {
+                    opacity: 0.8;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .main-section-wrapper { 
+        &::before { 
+            clip-path: polygon(50% 0%, 100% 0, 100% 40%, 75% 45%, 25% 45%, 0 40%, 0 0);
+        }
+    }
+}

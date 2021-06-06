@@ -1,0 +1,100 @@
+<loading *ngIf="isLoading">{{ isLoading }}</loading>
+<section class="main-section-wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="head">
+                    <h1>Add Credentialing Organization</h1>
+                    <h2>Onboard a new Credentialing Organization</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-box-wrapper">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="img-box">
+                                <img src="/assets/images/vector.png" class="img-fluid" alt="Image">
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="form-box">
+                                <form [formGroup]="registerForm ">
+                                <div class="row">
+                                 
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Organization Name*</label>
+                                            <input type="text" class="form-control" placeholder="University of California" formControlName="orginaztioname">
+                                            
+                                                <span class="error" *ngIf="(registerFormControl.orginaztioname.touched || submitted) && registerFormControl.orginaztioname.errors?.required">Enter Organization Name</span>
+                                           
+                                            
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Country*</label>
+                                           
+                                            <select  class="form-control-drop" formControlName="country" >
+                                                <option *ngFor="let country of countries">
+                                                    {{country}}
+                                                  </option>
+                                                  </select>
+                                            
+                                            <span class="error" *ngIf="(registerFormControl.country.touched || submitted) && registerFormControl.country.errors?.required">Choose Country</span>
+                                            
+                            
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>Email Address*</label>
+                                            <input type="email" formControlName="email" class="form-control" placeholder="skinner@support.com">
+                                            <span class="error"
+                                            *ngIf="(registerFormControl.email.touched || submitted) && registerFormControl.email.errors?.required">
+                                            Email is required
+                                        </span>
+                                        <span class="error"
+                                            *ngIf="registerFormControl.email.touched && registerFormControl.email.errors?.email">
+                                            Enter a valid email address
+                                        </span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Certificate Catergory*</label>
+                                            <select class="form-control-drop" formControlName="certificatecatecategory">
+                                                <option value="ISL">ISL</option>
+                                                <option value="DSL">DSL</option>
+                                               
+                                            </select>
+                                            <span class="error" *ngIf="(registerFormControl.certificatecatecategory.touched || submitted) && registerFormControl.certificatecatecategory.errors?.required">Choose Category</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group" >
+                                            <label>Certificate*</label>
+                                            <select class="form-control-drop" formControlName="certificatecate">
+                                                <option value="SSN">SSN</option>
+                                                <option value="PSN">PSN</option>
+                                                
+                                            </select>
+                                            <span class="error" *ngIf="(registerFormControl.certificatecate.touched || submitted) && registerFormControl.certificatecate.errors?.required">Choose Certificate</span>
+                                        </div>
+                                    </div>
+                                
+                                </div>
+                                </form>
+                                <div class="text-right">
+                                    <button  class="add-btn" (click)="onSubmit()">Add</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
